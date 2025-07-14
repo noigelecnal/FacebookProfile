@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "balato";
+  src: url('m6x11plus.ttf') format('truetype');
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.Welcome {
+  font-family: "balato", sans-serif;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  margin: auto;
+  border: solid rgb(90, 0, 0);
+  text-align: center;
+}
+
+#Footer {
+  font-family: "balato", sans-serif;
+  background-color: #201f1f;
+  margin: 0;
+  border: solid;
+  border-color:#1a1a1a;
+  left: 0;
+  right: 0;
+  width: 100%;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+#Sure {
+  font-family: "balato", sans-serif;
+  font-size: 400%;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+
+#Sure::before,
+#Sure::after {
+  content: "Under Maintenance";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  font-family: "balato", sans-serif;
+}
+
+#Sure::before {
+  color: #00ffff; 
+  z-index: -1;
+  animation: glitchTop 1s infinite;
+}
+
+#Sure::after {
+  color: #ff00ff; 
+  z-index: -2;
+  animation: glitchBottom 1s infinite;
+}
+
+
+@keyframes glitch {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  20% {
+    transform: translate(-51%, -49%);
+  }
+  40% {
+    transform: translate(-49%, -52%);
+  }
+  60% {
+    transform: translate(-50.5%, -48.5%);
+  }
+  80% {
+    transform: translate(-49.5%, -50.5%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes glitchTop {
+  0% {
+    clip-path: inset(0 0 85% 0);
+    transform: translate(2px, -2px);
+  }
+  50% {
+    clip-path: inset(0 0 30% 0);
+    transform: translate(-2px, 2px);
+  }
+  100% {
+    clip-path: inset(0 0 85% 0);
+    transform: translate(1px, -1px);
+  }
+}
+
+
+@keyframes glitchBottom {
+  0% {
+    clip-path: inset(85% 0 0 0);
+    transform: translate(-2px, 2px);
+  }
+  50% {
+    clip-path: inset(30% 0 0 0);
+    transform: translate(2px, -1px);
+  }
+  100% {
+    clip-path: inset(85% 0 0 0);
+    transform: translate(-1px, 1px);
+  }
+}
